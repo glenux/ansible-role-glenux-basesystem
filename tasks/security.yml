@@ -1,0 +1,19 @@
+---
+- name: "Installing security tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - encfs  # system & security
+    - cryptkeeper # desktop & security
+    - cryptmount # desktop & security
+    - cryptsetup # system & security
+    - cryptsetup-bin # system & security
+    - libpam-encfs # system & security
+    - keepassx # desktop & security
+    - kpcli # ?? & security
+    - pwgen # ?? & security
+    - openvpn # system or desktop and security
+    - network-manager-openvpn # desktop & security
+    - easy-rsa # system & security
+

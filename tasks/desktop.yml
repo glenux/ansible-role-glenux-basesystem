@@ -1,0 +1,13 @@
+---
+- name: "Installing desktop environments"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - lightdm
+    - lxde
+    - lxsession
+    - x2goclient
+    - kde-plasma-desktop
+    - xserver-xorg-core
+

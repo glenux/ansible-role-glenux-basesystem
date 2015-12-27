@@ -1,0 +1,11 @@
+---
+- name: "Installing network tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - nmap
+    - wireshark
+    - manpages-dev
+    - vlan
+

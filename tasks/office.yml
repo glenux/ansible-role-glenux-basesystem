@@ -1,0 +1,32 @@
+---
+- name: "Installing office/text utils"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - leafpad
+    - libreoffice
+    - lyx
+    - ttf-mscorefonts-installer
+
+- name: "Installing office/image utils"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - gimp
+    - geeqie
+    - gwenview
+    - inkscape
+
+- name: "Installing office/communication tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - iceweasel
+    - icedove
+    - chromium
+    - psi-plus
+    - mutt
+

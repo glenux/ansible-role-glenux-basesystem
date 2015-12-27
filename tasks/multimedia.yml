@@ -1,0 +1,13 @@
+---
+- name: "Installing multimedia tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - mpv
+    - mplayer
+    - vlc
+    - transcode
+    - ffmpeg
+
+

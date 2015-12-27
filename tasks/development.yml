@@ -1,0 +1,28 @@
+---
+- name: "Installing development utils"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - vim
+    - vim-gtk
+    - git
+    - git-flow
+    - subversion
+    - mercurial
+    - hg-fast-export
+    - meld
+    - devscripts
+    - screen
+    - tmux
+    - opam
+    - cmake
+
+- name: "Installing development libraries"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - manpages-dev
+    - plasma-desktop-dev
+    - xserver-xorg-dev

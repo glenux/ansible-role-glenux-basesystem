@@ -1,0 +1,11 @@
+---
+- name: "Installing system tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - htop
+    - unrar
+    - lshw
+
+
