@@ -4,6 +4,8 @@
     name="{{item}}"
     state=present
   with_items:
+    - bruteforce-luks # system & security 
+    - encfs  # system & security
     - encfs  # system & security
     - cryptkeeper # desktop & security
     - cryptmount # desktop & security

@@ -26,3 +26,6 @@
     - manpages-dev
     - plasma-desktop-dev
     - xserver-xorg-dev
+    - libreadline-dev
+    - libssl-dev
+
