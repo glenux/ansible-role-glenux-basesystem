@@ -5,7 +5,8 @@
     state=present
   with_items:
     - htop
-    - unrar
     - lshw
+    - slay
+    - unrar
 
 

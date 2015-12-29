@@ -4,28 +4,38 @@
     name="{{item}}"
     state=present
   with_items:
+    - autoconf
+    - automake
+    - build-essential
+    - cmake
+    - configure-debian
+    - devscripts
+    - git-core
+    - git-flow
+    - hg-fast-export
+    - libtool
+    - meld
+    - mercurial
+    - opam
+    - screen
+    - subversion
+    - tmux
     - vim
     - vim-gtk
-    - git
-    - git-flow
-    - subversion
-    - mercurial
-    - hg-fast-export
-    - meld
-    - devscripts
-    - screen
-    - tmux
-    - opam
-    - cmake
+    - xutils
 
 - name: "Installing development libraries"
   apt: >
     name="{{item}}"
     state=present
   with_items:
-    - manpages-dev
-    - plasma-desktop-dev
-    - xserver-xorg-dev
+    - libdrm-dev
     - libreadline-dev
     - libssl-dev
+    - manpages-dev
+    - mesa-common-dev
+    - plasma-desktop-dev
+    - xorg-dev
+    - xserver-xorg-dev
+    - xutils-dev
 
