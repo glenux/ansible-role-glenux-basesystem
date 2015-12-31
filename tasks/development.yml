@@ -23,6 +23,55 @@
     - vim
     - vim-gtk
     - xutils
+    - curl 
+    - mercurial 
+    - make 
+    - binutils 
+    - bison 
+    - gcc
+    - clang
+
+- name: "Installing php5 language"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - virtualenv
+
+- name: "Installing Rust language"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - rustc
+    - rust-doc
+    - rust-gdb
+    - cargo
+
+- name: "Installing Go language"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - golang
+
+- name: "Installing PHP language"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - php5-apcu
+    - php5-cli
+    - php5-common
+    - php5-curl
+    - php5-gd
+    - php5-imagick
+    - php5-json
+    - php5-mcrypt
+    - php5-mysql
+    - php5-readline
+    - php5-tidy
+    - php5-xsl
 
 - name: "Installing development libraries"
   apt: >
