@@ -32,6 +32,13 @@
     - gcc-5-multilib
     - clang-3.8
 
+- name: "Installing Ruby language"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - gem2deb
+
 - name: "Installing php5 language"
   apt: >
     name="{{item}}"
