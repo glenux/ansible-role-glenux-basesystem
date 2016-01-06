@@ -1,0 +1,12 @@
+---
+- name: "Installing fasd"
+  git: >
+    repo=https://github.com/clvv/fasd.git
+    dest=/usr/local/fasd
+    version=master
+
+- command: make install
+  args:
+    chdir: /usr/local/fasd
+  #creates:
+

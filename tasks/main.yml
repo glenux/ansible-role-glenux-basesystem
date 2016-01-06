@@ -7,3 +7,4 @@
 - include: network.yml
 - include: office.yml
 - include: security.yml
+- include: shell.yml

@@ -28,8 +28,9 @@
     - make 
     - binutils 
     - bison 
-    - gcc
-    - clang
+    - gcc-5
+    - gcc-5-multilib
+    - clang-3.8
 
 - name: "Installing php5 language"
   apt: >
@@ -87,4 +88,6 @@
     - xorg-dev
     - xserver-xorg-dev
     - xutils-dev
+    - libsqlite3-dev
+    - libsqlite0-dev
 
