@@ -1,4 +1,38 @@
 ---
+
+- template: 
+    src=apt_conf_glenuxnet_base.j2
+    dest=/etc/apt/apt.conf.d/00glenuxnet_base
+    owner=root
+    group=root
+    mode=0644
+
+# Debian normal
+- apt_repository: repo='deb http://ftp.fr.debian.org/debian/ stable main contrib non-free' state=present
+  notify: ['Update APT cache']
+- apt_repository: repo='deb-src http://ftp.fr.debian.org/debian/ stable main contrib non-free' state=present
+  notify: ['Update APT cache']
+
+- apt_repository: repo='deb http://ftp.fr.debian.org/debian/ testing main contrib non-free' state=present
+  notify: ['Update APT cache']
+- apt_repository: repo='deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free' state=present
+  notify: ['Update APT cache']
+
+- apt_repository: repo='deb http://ftp.fr.debian.org/debian/ unstable main contrib non-free' state=present
+  notify: ['Update APT cache']
+- apt_repository: repo='deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free' state=present
+  notify: ['Update APT cache']
+
+# Debian security
+- apt_repository: repo='deb http://security.debian.org/ stable/updates main contrib non-free' state=present
+  notify: ['Update APT cache']
+- apt_repository: repo='deb-src http://security.debian.org/ stable/updates main contrib non-free' state=present
+  notify: ['Update APT cache']
+
+# Debian stable-update (ex-volatile)
+- apt_repository: repo='deb http://ftp.fr.debian.org/debian/ stable-updates main contrib non-free' state=present
+- apt_repository: repo='deb-src http://ftp.fr.debian.org/debian/ stable-updates main contrib non-free' state=present
+
 - include: system.yml
 - include: desktop.yml
 - include: shopping.yml
@@ -8,3 +42,4 @@
 - include: office.yml
 - include: security.yml
 - include: shell.yml
+
