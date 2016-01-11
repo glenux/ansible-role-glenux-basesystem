@@ -22,6 +22,8 @@
     - tmux
     - vim
     - vim-gtk
+    - kate
+    - kdevelop
     - xutils
     - curl 
     - mercurial 
