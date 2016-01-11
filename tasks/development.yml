@@ -24,6 +24,8 @@
     - vim-gtk
     - kate
     - kdevelop
+    - umbrello
+    - umlet
     - xutils
     - curl 
     - mercurial 
