@@ -32,6 +32,34 @@
     - gcc-5-multilib
     - clang-3.8
 
+
+- name: "Installing Haskell language"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - ghc
+    - ibghc-uuid-dev 
+    - libghc-uuid-types-dev
+    - libghc-configfile-dev 
+    - libghc-path-dev 
+    - libghc-ghc-paths-dev 
+    - libghc-system-fileio-dev
+    - libghc-path-pieces-dev
+    - libghc-glob-dev
+    - libghc-json-dev
+    - libghc-pandoc-dev
+    - libghc-hoauth2-dev 
+    - libghc-feed-dev
+    - libghc-filestore-dev
+    - libghc-xss-sanitize-dev
+    - libghc-recaptcha-dev
+    - libghc-happstack-server-dev
+    - libghc-hstringtemplate-dev
+    - libghc-safe-dev
+    - libghc-uri-dev
+    - libghc-url-dev
+
 - name: "Installing Ruby language"
   apt: >
     name="{{item}}"
