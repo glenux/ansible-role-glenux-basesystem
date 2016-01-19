@@ -1,0 +1,13 @@
+Apt::Default-Release "{{ basesystem_release }}";
+
+APT
+{
+  Architecture "{{ basesystem_arch }}";
+
+  Get
+  {
+    Assume-Yes "false";
+    Fix-Broken "true";
+    AllowUnauthenticated "false";
+  };
+};
