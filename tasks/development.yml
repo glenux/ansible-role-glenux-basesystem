@@ -43,7 +43,7 @@
     state=present
   with_items:
     - ghc
-    - ibghc-uuid-dev 
+    - libghc-uuid-dev 
     - libghc-uuid-types-dev
     - libghc-configfile-dev 
     - libghc-path-dev 
