@@ -1,2 +1,16 @@
 ---
 # defaults file for glenux.basesystem
+basesystem_role: workstation
+basesystem_arch: null
+basesystem_gui: false
+
+basesystem_task_desktop: false
+basesystem_task_development: false
+basesystem_task_multimedia: false
+basesystem_task_network: false
+basesystem_task_office: false
+basesystem_task_security: false
+basesystem_task_shell: false
+basesystem_task_shopping: false
+basesystem_task_system: false
+
