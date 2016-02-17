@@ -1,10 +1,11 @@
 ---
-- name: "Installing development utils"
+- name: "Installing system development utils"
   apt: >
     name="{{item}}"
     state=present
   with_items:
-    - autoconf
+    - manpages-dev
+    - autoconf  
     - automake
     - build-essential
     - cmake
@@ -21,12 +22,6 @@
     - subversion
     - tmux
     - vim
-    - vim-gtk
-    - kate
-    - kdevelop
-    - umbrello
-    - umlet
-    - xutils
     - curl 
     - mercurial 
     - make 
@@ -35,7 +30,20 @@
     - gcc-5
     - gcc-5-multilib
     - clang-3.8
+  when: basesystem_task_development == true
 
+- name: "Installing desktop development utils"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - umbrello
+    - umlet
+    - kdevelop
+    - vim-gtk
+    - kate
+    - xutils
+  when: basesystem_task_development == true && basesystem_task_desktop == true
 
 - name: "Installing Haskell language"
   apt: >
@@ -63,6 +71,7 @@
     - libghc-safe-dev
     - libghc-uri-dev
     - libghc-url-dev
+  when: basesystem_task_development == true
 
 - name: "Installing Ruby language"
   apt: >
@@ -70,6 +79,7 @@
     state=present
   with_items:
     - gem2deb
+  when: basesystem_task_development == true
 
 - name: "Installing php5 language"
   apt: >
@@ -77,6 +87,7 @@
     state=present
   with_items:
     - virtualenv
+  when: basesystem_task_development == true
 
 - name: "Installing Rust language"
   apt: >
@@ -87,6 +98,7 @@
     - rust-doc
     - rust-gdb
     - cargo
+  when: basesystem_task_development == true
 
 - name: "Installing Go language"
   apt: >
@@ -94,6 +106,7 @@
     state=present
   with_items:
     - golang
+  when: basesystem_task_development == true
 
 - name: "Installing PHP language"
   apt: >
@@ -112,6 +125,7 @@
     - php5-readline
     - php5-tidy
     - php5-xsl
+  when: basesystem_task_development == true
 
 - name: "Installing development libraries"
   apt: >
@@ -129,4 +143,5 @@
     - xutils-dev
     - libsqlite3-dev
     - libsqlite0-dev
+  when: basesystem_task_development == true
 

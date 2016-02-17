@@ -4,9 +4,11 @@
     repo=https://github.com/clvv/fasd.git
     dest=/usr/local/fasd
     version=master
+  when: basesystem_task_shell == true
 
 - command: make install
   args:
     chdir: /usr/local/fasd
   #creates:
+  when: basesystem_task_shell == true
 

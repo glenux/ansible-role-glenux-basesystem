@@ -1,5 +1,14 @@
 ---
-- name: "Installing multimedia tools"
+- name: "Installing desktop multimedia tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - transcode
+    - ffmpeg
+  when: basesystem_task_multimedia == true
+
+- name: "Installing desktop multimedia tools"
   apt: >
     name="{{item}}"
     state=present
@@ -7,8 +16,7 @@
     - mpv
     - mplayer
     - vlc
-    - transcode
-    - ffmpeg
     - flashplugin-nonfree
     - pepperflashplugin-nonfree
+  when: basesystem_task_multimedia == true && basesystem_task_desktop == true
 

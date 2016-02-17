@@ -1,20 +1,5 @@
 ---
 
-# Force yes no matter the value
-- set_fact: basesystem_task_desktop=true
-  when: basesystem_role == 'workstation'
-- set_fact: basesystem_task_multimedia=true
-  when: basesystem_role == 'workstation'
-- set_fact: basesystem_task_office=true
-  when: basesystem_role == 'workstation'
-- set_fact: basesystem_task_shopping=true
-  when: basesystem_role == 'workstation'
-
-- set_fact: basesystem_task_development=false
-  when: basesystem_role == 'server'
-- set_fact: basesystem_task_security=true
-  when: basesystem_role == 'server'
-
 - template: 
     src=apt_conf_glenuxnet_base.j2
     dest=/etc/apt/apt.conf.d/00glenuxnet_base
@@ -32,6 +17,9 @@
 - apt_repository: repo='deb http://ftp.fr.debian.org/debian/ unstable main contrib non-free' state=present
 - apt_repository: repo='deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free' state=present
 
+- apt_repository: repo='deb http://ftp.fr.debian.org/debian/ experimental main contrib non-free' state=present
+- apt_repository: repo='deb-src http://ftp.fr.debian.org/debian/ experimental main contrib non-free' state=present
+
 # Debian security
 - apt_repository: repo='deb http://security.debian.org/ stable/updates main contrib non-free' state=present
 - apt_repository: repo='deb-src http://security.debian.org/ stable/updates main contrib non-free' state=present
@@ -45,19 +33,10 @@
 
 - include: system.yml
 - include: desktop.yml
-  when: basesystem_task_desktop == true
 - include: shopping.yml
-  when: basesystem_task_shopping == true
 - include: multimedia.yml
-  when: basesystem_task_multimedia == true
 - include: development.yml
-  when: basesystem_task_development == true
 - include: network.yml
-  when: basesystem_task_network == true
-- include: office.yml
-  when: basesystem_task_office == true
 - include: security.yml
-  when: basesystem_task_security == true
 - include: shell.yml
-  when: basesystem_task_shell == true
 

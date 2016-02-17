@@ -8,6 +8,7 @@
     - libreoffice
     - lyx
     - ttf-mscorefonts-installer
+  when: basesystem_task_desktop == true && basesystem_task_office == true
 
 - name: "Installing office/image utils"
   apt: >
@@ -18,6 +19,8 @@
     - geeqie
     - gwenview
     - inkscape
+    - okular
+  when: basesystem_task_desktop == true && basesystem_task_office == true
 
 - name: "Installing office/communication tools"
   apt: >
@@ -29,4 +32,5 @@
     - chromium
     - psi-plus
     - mutt
+  when: basesystem_task_desktop == true && basesystem_task_office == true
 

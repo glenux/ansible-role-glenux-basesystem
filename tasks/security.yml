@@ -1,5 +1,5 @@
 ---
-- name: "Installing security tools"
+- name: "Installing system security tools"
   apt: >
     name="{{item}}"
     state=present
@@ -7,15 +7,23 @@
     - bruteforce-luks # system & security 
     - encfs  # system & security
     - encfs  # system & security
-    - cryptkeeper # desktop & security
-    - cryptmount # desktop & security
     - cryptsetup # system & security
     - cryptsetup-bin # system & security
     - libpam-encfs # system & security
-    - keepassx # desktop & security
-    - kpcli # ?? & security
-    - pwgen # ?? & security
     - openvpn # system or desktop and security
-    - network-manager-openvpn # desktop & security
     - easy-rsa # system & security
+  when: basesystem_task_security == true
+
+- name: "Installing desktop security tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - cryptkeeper # desktop & security
+    - cryptmount # desktop & security
+    - network-manager-openvpn # desktop & security
+    - keepassx # desktop & security
+    - kpcli # desktop ?? & security
+    - pwgen # desktop & security
+  when: basesystem_task_desktop == true && basesystem_task_security == true
 

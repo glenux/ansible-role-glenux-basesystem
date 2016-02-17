@@ -5,4 +5,4 @@
     state=present
   with_items:
     - esniper
-
+  when: basesystem_task_shopping == true

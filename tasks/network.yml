@@ -1,11 +1,17 @@
 ---
-- name: "Installing network tools"
+- name: "Installing system network tools"
   apt: >
     name="{{item}}"
     state=present
   with_items:
     - nmap
-    - wireshark
-    - manpages-dev
     - vlan
+  when: basesystem_task_network == true 
 
+- name: "Installing desktop tools"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - wireshark
+  when: basesystem_task_network == true && basesystem_task_desktop == true

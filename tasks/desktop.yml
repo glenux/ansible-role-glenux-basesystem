@@ -10,4 +10,5 @@
     - x2goclient
     - kde-plasma-desktop
     - xserver-xorg-core
+  when: basesystem_task_desktop == true
 
