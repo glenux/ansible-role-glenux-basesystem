@@ -18,5 +18,5 @@
     - vlc
     - flashplugin-nonfree
     - pepperflashplugin-nonfree
-  when: basesystem_task_multimedia == true && basesystem_task_desktop == true
+  when: (basesystem_task_multimedia == true) and (basesystem_task_desktop == true)
 

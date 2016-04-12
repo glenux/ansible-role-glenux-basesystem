@@ -15,5 +15,4 @@ basesystem_task_security: false
 basesystem_task_shell: false
 basesystem_task_shopping: false
 basesystem_task_system: false
-basesystem_task_shell: false
 

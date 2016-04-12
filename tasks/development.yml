@@ -43,7 +43,7 @@
     - vim-gtk
     - kate
     - xutils
-  when: basesystem_task_development == true && basesystem_task_desktop == true
+  when: (basesystem_task_development == true) and (basesystem_task_desktop == true)
 
 - name: "Installing Haskell language"
   apt: >

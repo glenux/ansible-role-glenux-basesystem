@@ -14,4 +14,4 @@
     state=present
   with_items:
     - wireshark
-  when: basesystem_task_network == true && basesystem_task_desktop == true
+  when: (basesystem_task_network == true) and (basesystem_task_desktop == true)

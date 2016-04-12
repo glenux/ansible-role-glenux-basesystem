@@ -25,5 +25,5 @@
     - keepassx # desktop & security
     - kpcli # desktop ?? & security
     - pwgen # desktop & security
-  when: basesystem_task_desktop == true && basesystem_task_security == true
+  when: (basesystem_task_desktop == true) and (basesystem_task_security == true)
 
