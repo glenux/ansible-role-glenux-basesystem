@@ -1,5 +1,36 @@
 ---
 
+## FIXME: check that default values are sane, or fail
+- fail: Please set basesystem_arch value to something ...
+  when: basesystem_arch == null
+
+- fail: Please set basesystem_task_desktop to either true or false
+  when: basesystem_task_desktop == null
+
+- fail: Please set basesystem_task_development to either true or false
+  when: basesystem_task_development == null
+
+- fail: Please set basesystem_task_multimedia to either true or false
+  when: basesystem_task_multimedia == null
+
+- fail: Please set basesystem_task_network to either true or false
+  when: basesystem_task_network == null
+
+- fail: Please set basesystem_task_office to either true or false
+  when: basesystem_task_office == null
+
+- fail: Please set basesystem_task_security to either true or false
+  when: basesystem_task_security == null
+
+- fail: Please set basesystem_task_shell to either true or false
+  when: basesystem_task_shell == null
+
+- fail: Please set basesystem_task_shopping to either true or false
+  when: basesystem_task_shopping == null
+
+- fail: Please set basesystem_task_system to either true or false
+  when: basesystem_task_system == null
+
 - template: 
     src=apt_conf_glenuxnet_base.j2
     dest=/etc/apt/apt.conf.d/00glenuxnet_base
