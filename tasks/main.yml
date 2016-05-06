@@ -1,35 +1,35 @@
 ---
 
 ## FIXME: check that default values are sane, or fail
-- fail: Please set basesystem_arch value to something ...
-  when: basesystem_arch == null
+- fail: msg="Please set basesystem_arch value to something ..."
+  when: basesystem_arch is undefined
 
-- fail: Please set basesystem_task_desktop to either true or false
-  when: basesystem_task_desktop == null
+- fail: msg="Please set basesystem_task_desktop to either true or false"
+  when: basesystem_task_desktop is undefined
 
-- fail: Please set basesystem_task_development to either true or false
-  when: basesystem_task_development == null
+- fail: msg="Please set basesystem_task_development to either true or false"
+  when: basesystem_task_development is undefined
 
-- fail: Please set basesystem_task_multimedia to either true or false
-  when: basesystem_task_multimedia == null
+- fail: msg="Please set basesystem_task_multimedia to either true or false"
+  when: basesystem_task_multimedia is undefined
 
-- fail: Please set basesystem_task_network to either true or false
-  when: basesystem_task_network == null
+- fail: msg="Please set basesystem_task_network to either true or false"
+  when: basesystem_task_network is undefined
 
-- fail: Please set basesystem_task_office to either true or false
-  when: basesystem_task_office == null
+- fail: msg="Please set basesystem_task_office to either true or false"
+  when: basesystem_task_office is undefined
 
-- fail: Please set basesystem_task_security to either true or false
-  when: basesystem_task_security == null
+- fail: msg="Please set basesystem_task_security to either true or false"
+  when: basesystem_task_security is undefined
 
-- fail: Please set basesystem_task_shell to either true or false
-  when: basesystem_task_shell == null
+- fail: msg="Please set basesystem_task_shell to either true or false"
+  when: basesystem_task_shell is undefined
 
-- fail: Please set basesystem_task_shopping to either true or false
-  when: basesystem_task_shopping == null
+- fail: msg="Please set basesystem_task_shopping to either true or false"
+  when: basesystem_task_shopping is undefined
 
-- fail: Please set basesystem_task_system to either true or false
-  when: basesystem_task_system == null
+- fail: msg="Please set basesystem_task_system to either true or false"
+  when: basesystem_task_system is undefined
 
 - template: 
     src=apt_conf_glenuxnet_base.j2

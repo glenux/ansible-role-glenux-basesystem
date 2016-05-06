@@ -5,33 +5,41 @@
     state=present
   with_items:
     - manpages-dev
-    - autoconf  
-    - automake
-    - build-essential
     - cmake
     - configure-debian
-    - devscripts
     - git-core
     - git-flow
     - mercurial
     - hg-fast-export
-    - libtool
     - meld
     - mercurial
-    - opam
     - screen
     - subversion
     - tmux
     - vim
     - curl 
     - mercurial 
+  when: basesystem_task_development == true
+
+- name: "Installing C/C++ development utils"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - autoconf  
+    - automake
+    - build-essential
+    - cmake
+    - configure-debian
+    - devscripts
+    - libtool
     - make 
     - binutils 
     - bison 
-    - gcc-5
-    - gcc-5-multilib
-    - clang-3.8
+    - gcc
+    - gcc-multilib
   when: basesystem_task_development == true
+  #  - clang
 
 - name: "Installing desktop development utils"
   apt: >
@@ -45,6 +53,14 @@
     - kate
     - xutils
   when: (basesystem_task_development == true) and (basesystem_task_desktop == true)
+
+- name: "Installing OCaml language"
+  apt: >
+    name="{{item}}"
+    state=present
+  with_items:
+    - opam
+  when: basesystem_task_development == true
 
 - name: "Installing Haskell language"
   apt: >

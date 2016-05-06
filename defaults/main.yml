@@ -4,15 +4,15 @@
 basesystem_role: workstation
 
 # basesystem_arch: [i386|amd64|powerpc]
-basesystem_arch: null
-
-basesystem_task_desktop: null
-basesystem_task_development: null
-basesystem_task_multimedia: null
-basesystem_task_network: null
-basesystem_task_office: null
-basesystem_task_security: null
-basesystem_task_shell: null
-basesystem_task_shopping: null
-basesystem_task_system: null
-
+# basesystem_arch: null
+# 
+# basesystem_task_desktop: null
+# basesystem_task_development: null
+# basesystem_task_multimedia: null
+# basesystem_task_network: null
+# basesystem_task_office: null
+# basesystem_task_security: null
+# basesystem_task_shell: null
+# basesystem_task_shopping: null
+# basesystem_task_system: null
+# 
